@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">/home/banon/Desktop/My-check-list/my_project_directory</parameter>
+    <parameter key="kernel.project_dir">/home/banon/Desktop/My-check-list</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/home/banon/Desktop/My-check-list/my_project_directory/var/log</parameter>
+    <parameter key="kernel.build_dir">/home/banon/Desktop/My-check-list/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">/home/banon/Desktop/My-check-list/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/home/banon/Desktop/My-check-list/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/home/banon/Desktop/My-check-list/my_project_directory/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/home/banon/Desktop/My-check-list/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
     </parameter>
@@ -44,14 +44,14 @@
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/home/banon/Desktop/My-check-list/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="cache.prefix.seed">_/home/banon/Desktop/My-check-list/my_project_directory.App_KernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_/home/banon/Desktop/My-check-list.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -60,7 +60,7 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">/home/banon/Desktop/My-check-list/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="console.command.ids" type="collection"/>
@@ -343,7 +343,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/http_cache</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -353,7 +353,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -472,7 +472,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory</argument>
+      <argument>/home/banon/Desktop/My-check-list</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -505,7 +505,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory</argument>
+      <argument>/home/banon/Desktop/My-check-list</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -670,7 +670,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory</argument>
+      <argument>/home/banon/Desktop/My-check-list</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -798,9 +798,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>N+8RCEADHc</argument>
+      <argument>cXG8FX6dAc</argument>
       <argument>0</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/app</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -813,50 +813,50 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>GS2tpHjHt6</argument>
+      <argument>L7N3ndv+M1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/system</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>a438MUOVVF</argument>
+      <argument>mwcRD2tzP0</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/system</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>NqJZFUGXBr</argument>
+      <argument>eHbkTQk9OK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/system</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>KzGCgloYsp</argument>
+      <argument>a7Koq0AYJO</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/system</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>9LdPJ4z7Ke</argument>
+      <argument>Rv1sakbTmt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/system</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -866,7 +866,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/system</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -885,7 +885,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/pools/app</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1081,7 +1081,7 @@
       <argument type="service" id=".service_locator.UxjivMC.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev</argument>
+        <argument key="cache_dir">/home/banon/Desktop/My-check-list/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1120,7 +1120,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory</argument>
+      <argument>/home/banon/Desktop/My-check-list</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1156,7 +1156,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>/home/banon/Desktop/My-check-list/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -1165,7 +1165,7 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/.env.dev.local</argument>
+      <argument>/home/banon/Desktop/My-check-list/.env.dev.local</argument>
     </service>
     <service id=".cache_connection.GD_MSZC" class="Symfony\Component\Cache\Adapter\AbstractAdapter">
       <argument>redis://localhost</argument>
@@ -1211,7 +1211,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/sessions</argument>
+      <argument>/home/banon/Desktop/My-check-list/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -1223,7 +1223,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>/home/banon/Desktop/My-check-list/my_project_directory/var/cache/dev/sessions</argument>
+          <argument>/home/banon/Desktop/My-check-list/var/cache/dev/sessions</argument>
         </service>
       </argument>
     </service>
