@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Hello {{ controller_name }}! ✅</h1>
+
+        <ul>
+            <li>   
+                <a  href="{{ path('app_register') }}">Créer un compte</a>
+            </li>
+            <li>   
+                <a  href="{{ path('app_login') }}">Se connecter</a>
+            </li>      
+        </ul>
+    </div>
+{% endblock %}
