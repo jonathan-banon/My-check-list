@@ -1,0 +1,14 @@
+
+nav{
+    justify-content: space-between !important;
+    padding: 15px 35px !important;
+    background-color: $color-white;
+    color: $color-dark;
+    .logo-nav{
+        max-width: 120px;
+        border-radius: 50px;
+    }
+    #navbarNavDropdown{
+        max-width: max-content;
+    }
+}
